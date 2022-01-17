@@ -1,9 +1,11 @@
 package ec.edu.uce.repository;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import ec.edu.uce.modelo.Bebida;
 import ec.edu.uce.modelo.Despensa;
 
 @Repository
@@ -25,6 +27,41 @@ public class DespensaRepoImpl implements IDespensaRepo {
 		this.jdbcTemplate.update("INSERT INTO public.despensa(\r\n"
 				+ "	id_despensa, nom_producto_despensa, fecha_elavoracion_despensa, fecha_caducidad_despensa, peso_kilogramos_despensa)\r\n"
 				+ "	VALUES (?, ?, ?, ?, ?)",datosAInsertar);
+	}
+
+	@Override
+	public Despensa buscarDespensa(Integer id) {
+		// TODO Auto-generated method stub
+		Object[] datosABuscar = new Object[] {
+				id
+		};
+		return this.jdbcTemplate.queryForObject("SELECT * FROM public.despensa WHERE id_despensa=?", datosABuscar, new BeanPropertyRowMapper<Despensa>(Despensa.class));
+	}
+
+	@Override
+	public void actualizarDespensa(Despensa despensa) {
+		// TODO Auto-generated method stub
+		Object[] datosAActualizar = new Object[] {
+				despensa.getId(),
+				despensa.getNom_producto(),
+				despensa.getFecha_elaboracion(),
+				despensa.getFecha_caducidad(),
+				despensa.getPeso_kilogramos(),
+				despensa.getId()
+		};
+		this.jdbcTemplate.update("UPDATE public.despensa\r\n"
+				+ "	SET id_despensa=?, nom_producto_despensa=?, fecha_elavoracion_despensa=?, fecha_caducidad_despensa=?, peso_kilogramos_despensa=?\r\n"
+				+ "	WHERE id_despensa=?",datosAActualizar);
+	}
+
+	@Override
+	public void borrarDespensa(Integer id) {
+		// TODO Auto-generated method stub
+		Object[] datoABorrar = new Object[] {
+				id
+		};
+		this.jdbcTemplate.update("DELETE FROM public.despensa\r\n"
+				+ "	WHERE id_despensa=?", datoABorrar);
 	}
 
 }

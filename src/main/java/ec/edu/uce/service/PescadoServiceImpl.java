@@ -18,4 +18,22 @@ public class PescadoServiceImpl implements IPescadoService {
 		this.pescadoRepo.insertarPescado(pescado);
 	}
 
+	@Override
+	public Pescado buscarPescadoPorId(Integer id) {
+		// TODO Auto-generated method stub
+		return this.pescadoRepo.buscarPescado(id);
+	}
+
+	@Override
+	public void actualizarPescado(Pescado pescado) {
+		// TODO Auto-generated method stub
+		this.pescadoRepo.actualizarPescado(pescado);
+	}
+
+	@Override
+	public void borrarPescadoPorId(Integer id) {
+		// TODO Auto-generated method stub
+		this.pescadoRepo.borrarPescado(id);
+	}
+
 }

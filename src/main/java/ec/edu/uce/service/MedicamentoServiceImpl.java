@@ -18,4 +18,22 @@ public class MedicamentoServiceImpl implements IMedicamentoService {
 		this.medicamentoRepo.insertarMedicamento(medicamentos);
 	}
 
+	@Override
+	public Medicamentos buscarMedicamentoPorId(Integer id) {
+		// TODO Auto-generated method stub
+		return this.medicamentoRepo.buscarMedicamento(id);
+	}
+
+	@Override
+	public void actualizarMedicamento(Medicamentos medicamentos) {
+		// TODO Auto-generated method stub
+		this.medicamentoRepo.actualizarMedicamento(medicamentos);
+	}
+
+	@Override
+	public void borrarMedicamentoPorId(Integer id) {
+		// TODO Auto-generated method stub
+		this.medicamentoRepo.borrarMedicamento(id);
+	}
+
 }

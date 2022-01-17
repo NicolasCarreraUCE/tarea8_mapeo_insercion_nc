@@ -18,4 +18,22 @@ public class DespensaServiceImpl implements IDespensaService {
 		this.despensaRepo.insertarDespensa(despensa);
 	}
 
+	@Override
+	public Despensa buscarDespensaPorId(Integer id) {
+		// TODO Auto-generated method stub
+		return this.despensaRepo.buscarDespensa(id);
+	}
+
+	@Override
+	public void actualizarDespensa(Despensa despensa) {
+		// TODO Auto-generated method stub
+		this.despensaRepo.actualizarDespensa(despensa);
+	}
+
+	@Override
+	public void borrarDespensaPorId(Integer id) {
+		// TODO Auto-generated method stub
+		this.despensaRepo.borrarDespensa(id);
+	}
+
 }

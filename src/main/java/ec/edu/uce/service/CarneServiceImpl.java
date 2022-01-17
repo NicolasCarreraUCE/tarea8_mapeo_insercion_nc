@@ -18,4 +18,22 @@ public class CarneServiceImpl implements ICarneService {
 		this.carneRepo.insertarCarne(carne);
 	}
 
+	@Override
+	public Carne buscarCarnePorId(Integer id) {
+		// TODO Auto-generated method stub
+		return this.carneRepo.buscarCarne(id);
+	}
+
+	@Override
+	public void actualizarCarne(Carne carne) {
+		// TODO Auto-generated method stub
+		this.carneRepo.actualizarCarne(carne);
+	}
+
+	@Override
+	public void borrarCarnePorId(Integer id) {
+		// TODO Auto-generated method stub
+		this.carneRepo.borrarCarne(id);
+	}
+
 }

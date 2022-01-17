@@ -18,4 +18,22 @@ public class CongeladoServiceImpl implements ICongeladoService {
 		this.congeladoRepo.insertarCongelado(congelado);
 	}
 
+	@Override
+	public Congelado buscarCongeladoPorId(Integer id) {
+		// TODO Auto-generated method stub
+		return this.congeladoRepo.buscarCongelado(id);
+	}
+
+	@Override
+	public void actualizarCongelado(Congelado congelado) {
+		// TODO Auto-generated method stub
+		this.congeladoRepo.actualizarCongelado(congelado);
+	}
+
+	@Override
+	public void borrarCongeladoPorId(Integer id) {
+		// TODO Auto-generated method stub
+		this.congeladoRepo.borrarCongelado(id);
+	}
+
 }

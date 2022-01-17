@@ -18,4 +18,22 @@ public class HogarServiceImpl implements IHogarService {
 		this.hogarRepo.insertarHogar(hogar);
 	}
 
+	@Override
+	public Hogar buscarHogarPorId(Integer id) {
+		// TODO Auto-generated method stub
+		return this.hogarRepo.buscarHogar(id);
+	}
+
+	@Override
+	public void actualizarHogar(Hogar hogar) {
+		// TODO Auto-generated method stub
+		this.hogarRepo.actualizarHogar(hogar);
+	}
+
+	@Override
+	public void borrarHogarPorId(Integer id) {
+		// TODO Auto-generated method stub
+		this.hogarRepo.borrarHogar(id);
+	}
+
 }

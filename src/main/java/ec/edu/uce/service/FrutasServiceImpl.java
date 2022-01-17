@@ -18,4 +18,22 @@ public class FrutasServiceImpl implements IFrutaService {
 		this.frutaRepo.insertarFruta(fruta);
 	}
 
+	@Override
+	public Fruta buscarFrutaPorId(Integer id) {
+		// TODO Auto-generated method stub
+		return this.frutaRepo.buscarFruta(id);
+	}
+
+	@Override
+	public void actualizarFruta(Fruta fruta) {
+		// TODO Auto-generated method stub
+		this.frutaRepo.actualizarFruta(fruta);
+	}
+
+	@Override
+	public void borrarFrutaPorId(Integer id) {
+		// TODO Auto-generated method stub
+		this.frutaRepo.borrarFruta(id);
+	}
+
 }

@@ -18,4 +18,22 @@ public class RefrigeradoServiceImpl implements IRefrigeradoService {
 		this.refrigeradoRepo.insertarRefrigerado(refrigerado);
 	}
 
+	@Override
+	public Refrigerado buscarRefrigeradoPorId(Integer id) {
+		// TODO Auto-generated method stub
+		return this.refrigeradoRepo.buscarRefrigerado(id);
+	}
+
+	@Override
+	public void actualizarRefrigerado(Refrigerado refrigerado) {
+		// TODO Auto-generated method stub
+		this.refrigeradoRepo.actualizarRefrigerado(refrigerado);
+	}
+
+	@Override
+	public void borrarRefrigeradoPorId(Integer id) {
+		// TODO Auto-generated method stub
+		this.refrigeradoRepo.borrarRefrigerado(id);
+	}
+
 }
